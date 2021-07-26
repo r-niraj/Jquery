@@ -1,54 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Find and Replace</title>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    <link rel="stylesheet" href="main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="main.css">
 </head>
-<body>
-<div class="row w-50 mx-auto mt-2">
-        <div class="page-header col-lg-12 col-md-12 col-12 mt-2">
-        <h4 class="bg-primary text-white p-1 text-center">FIND AND REPLACE</h4>
-		</div>
-            <div class="col-lg-3 col-md-3 col-12 mb-1">
-                <input type="text" id="find" class="form-control rounded-0" placeholder="Find" />
-            </div>
-            <div class="col-lg-3 col-md-3 col-12 mb-1">
-                <input type="text" id="replace" class="form-control rounded-0" placeholder="Replace With"/>
-            </div>
-            <div class="col-lg-6 col-md-6 col-12 mb-10">
-                <button type="button" id="btnSearch" class="btn btn-primary float-right rounded-0">Replace</button>
-            </div>
-		<div class="col-lg-12 col-md-12 col-12 mt-2">
-        <p id="target" class="bg-light text-dark p-3">Lorem apple ipsum dolor Apple sit amet, consectetur apple adipisicing elit. Nihil apple laborum maxime ipsam apple exercitationem apple a blanditiis. Officiis apple necessitatibus esse apple debitis harum apple amet apple molestias sunt adipisci apple iste, voluptates apple vitae, ipsam apple iure, apple odio.</p>
-		</div>
 
-</div>
+<body>
+    <div class="row w-50 mx-auto mt-2">
+        <div class="page-header col-lg-12 col-md-12 col-12 mt-2">
+            <h4 class="bg-primary text-white p-1 text-center">FIND AND REPLACE</h4>
+        </div>
+        <div class="col-lg-3 col-md-3 col-12 mb-1">
+            <input type="text" id="find" class="form-control rounded-0" placeholder="Find" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-12 mb-1">
+            <input type="text" id="replace" class="form-control rounded-0" placeholder="Replace With" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 mb-10">
+            <button type="button" id="btnSearch" class="btn btn-primary float-right rounded-0">Replace</button>
+        </div>
+        <div class="col-lg-12 col-md-12 col-12 mt-2">
+            <p id="target" class="bg-light text-dark p-3">Lorem apple ipsum dolor Apple sit amet, consectetur apple
+                adipisicing elit. Nihil apple laborum maxime ipsam apple exercitationem apple a blanditiis. Officiis
+                apple necessitatibus esse apple debitis harum apple amet apple molestias sunt adipisci apple iste,
+                voluptates apple vitae, ipsam apple iure, apple odio.</p>
+        </div>
+
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
+        document.addEventListener('DOMContentLoaded', function () {
             let btn = document.getElementById('btnSearch');
             btn.addEventListener('click', doFindAndReplace);
         });
-        
-        function doFindAndReplace(ev){
+
+        function doFindAndReplace(ev) {
             ev.preventDefault();
-            
+
             let find = document.getElementById('find').value;
             let replace = document.getElementById('replace').value;
-            
+
             let p = document.getElementById('target');
-            
-            while( p.textContent.indexOf(find) != -1 ){
+
+            while (p.textContent.indexOf(find) != -1) {
                 p.textContent = p.textContent.replace(find, replace);
             }
-            
+
         }
     </script>
-    
+
 </body>
+
 </html>
